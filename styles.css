@@ -1,0 +1,365 @@
+/* general changes */
+:root {
+  --white: hsl(0, 0%, 100%);
+  --violet: hsl(278, 90%, 23%);
+  --light-violet: hsl(270, 3%, 87%);
+  --dark-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  min-width: 37.5rem;
+  max-width: 87.5rem;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* section first card */
+
+.section__cards {
+  width: 35%;
+  height: 100%;
+  position: relative;
+  background: url(./images/bg-main-desktop.png) no-repeat center center /
+    cover;
+  color: var(--light-violet);
+}
+
+.section__out-cards {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.section__first-card {
+  position: relative;
+  transform: translateX(-100px);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.card__logo {
+  width: 5rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+
+.section__numbers-card {
+  position: absolute;
+
+  bottom: 5rem;
+  left: 1.7rem;
+  font-size: 2em;
+  letter-spacing: 2px;
+}
+
+.section__info-card {
+  position: absolute;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  bottom: 0;
+  padding-bottom: 2rem;
+  transform: translateX(1.5rem);
+}
+
+/* section second card */
+
+.section__second-card {
+  position: relative;
+
+  text-align: right;
+}
+
+.cvc__card {
+  position: absolute;
+  bottom: 48%;
+  right: 4rem;
+}
+
+/* FATHER SECTION FORMULARY CARD */
+
+.section__form {
+  width: 65%;
+  height: 100%;
+  background-color: var(--light-violet);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+/* SECTION INPUTS */
+
+.section__formulary {
+  display: flex;
+  flex-direction: column;
+  width: 21.875rem;
+  row-gap: 1.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  
+}
+
+.form__input-name,
+.form__input-number {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.input__name-card,
+.input__number-card {
+  height: 2.5rem;
+  border-radius: 8px;
+  border: none;
+  outline: solid 1px var(--dark-violet);
+  padding-left: 1rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* INPUT EXPIRATION AND CVC */
+
+.form__container-exp {
+  width: 100%;
+  display: flex;
+
+  gap: 20px;
+  margin: 0;
+}
+
+.form__exp {
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container__form-exp {
+  display: flex;
+  flex-direction: row;
+  gap: 0.625rem;
+  margin-top: 10px;
+}
+
+.expiration__year,
+.expiration__month {
+  width: 4.6875em;
+}
+
+.input__exp-card,
+.input__year-card {
+  width: 4.6875rem;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  border: none;
+  outline: solid 1px var(--dark-violet);
+  padding-left: 1rem;
+  font-weight: 600;
+  font-weight: 600;
+}
+
+input:focus {
+  outline: 1.2px solid var(--violet);
+}
+
+input::placeholder {
+  font-weight: 300;
+}
+
+.form__input-cvc {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+}
+
+.input__cvc-card {
+  width: 190px;
+  height: 2.5rem;
+  border-radius: 0.625rem;
+  border: none;
+  outline: solid 1px var(--dark-violet);
+  margin-top: 10px;
+  padding-left: 1rem;
+  font-weight: 600;
+}
+
+.form__input-cvc:focus {
+  outline: 1.2px solid var(--violet);
+}
+
+.error {
+  outline: 1px solid red !important;
+}
+
+/* MESSAGE ERROR */
+
+.section__name-error,
+.section__number-error,
+.section__exp-error,
+.section__cvc-error  {
+  font-size: 0.625rem;
+  color: red !important;
+  padding-top: 0.3rem;
+  text-transform: none;
+  visibility: hidden;
+}
+
+/* INPUT EXPIRATION AND CVC */
+
+/* BUTTON STYLES */
+
+.button__confirm {
+  width: 100%;
+  height: 2.8125rem;
+  border-radius: 8px;
+  background-color: var(--very-dark-violet);
+  color: var(--light-violet);
+  border: none;
+  cursor: pointer;
+  transition: 0.6s;
+  font-weight: 600;
+}
+
+.button__confirm:hover {
+  background-color: var(--violet);
+}
+
+.hidden{
+  display: none !important; 
+}
+
+/* COMPLETED FORM */
+
+.done{
+  width: 350px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  
+}
+
+.done img{
+  width: 6rem;
+}
+
+.done h1{
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  font-weight: 600;
+}
+
+.done h2{
+  font-size: 1rem;
+  color: var(--dark-violet);
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 900px;
+    width: 600px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .section__cards {
+    width: 100%;
+    height: 500px;
+    background: url(./images/bg-main-mobile.png) no-repeat center center / cover;
+  }
+
+  .section__first-card {
+    z-index: 1000;
+  }
+
+  .section__second-card {
+    transform: translateY(6.25rem);
+  }
+
+  .section__out-cards {
+    display: flex;
+    flex-direction: column-reverse;
+    left: 60%;
+    top: 60%;
+  }
+
+  .section__cards .card__logo {
+    width: 4.6875rem;
+  }
+
+  .section__numbers-card {
+    font-size: 1.8rem;
+  }
+  .section__first-card,
+  .section__first-card img,
+  .section__second-card,
+  .section__second-card img {
+    width: 400px;
+  }
+  .section__form {
+    width: 100%;
+  }
+
+  .section__formulary {
+    margin-top: 5rem;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .section__name-error,
+.section__number-error,
+.section__exp-error,
+.section__cvc-error  {
+  font-size: 0.625rem;
+  color: red !important;
+  padding-top: 0.3rem;
+  text-transform: none;
+  visibility: hidden;
+}
+
+  .input__name-card,
+  .input__number-card {
+    height: 3.75rem;
+  }
+
+  .input__exp-card,
+  .input__year-card {
+    height: 3.75rem;
+  }
+
+  .form__container-exp {
+    width: 100%;
+  }
+
+  .input__cvc-card {
+    height: 3.75rem;
+    width: 310px;
+  }
+
+
+  .button__confirm{
+    height: 3.75rem;
+  }
+}

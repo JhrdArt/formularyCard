@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+  <title>Frontend Mentor | Interactive card details form</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- font google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet" />
+  <!-- script -->
+  <script defer src="main.js"></script>
+</head>
+
+<body>
+
+  <section class="section__cards" id="section__cards">
+    <div class="section__out-cards">
+      <!-- SECTION FIRST CARD -->
+      <div class="section__first-card">
+        <img src="./images/bg-card-front.png" alt="card front">
+        <img src="./images/card-logo.svg" alt="card logo" class="card__logo">
+
+        <div class="section__numbers-card">
+          <span id="numbers__card">0000 0000 0000 0000</span>
+        </div>
+
+        <div class="section__info-card">
+          <span id="name__card">Jane Appleseed</span>
+          <div class="section__caducate-card">
+            <span id="month__card">00</span>/
+            <span id="year__card">00</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION SECOND CARD -->
+      <div class="section__second-card">
+        <img src="./images/bg-card-back.png" alt="card back">
+        <span class="cvc__card" id="cvc__card"> 000 </span>
+      </div>
+    </div>
+    </div>
+
+  </section>
+
+  <!-- SECTION FORM CARD -->
+  <section class="section__form">
+    <form action="" class="section__formulary" id="formulary">
+      <!-- INPUT NAME HOLDER CARD -->
+      <div class="form__input-name">
+        <label for="Card Holder Name">Card Holder Name</label>
+        <input type="text" class="input__name-card" id="input__name-card" placeholder="Jane Appleseed" />
+        <p class="section__name-error">Can't be blank!</p>
+      </div>
+
+      <!-- INPUT CARD NUMBER HOLDER  -->
+      <div class="form__input-number">
+        <label for="input__number-card">Card Number</label>
+        <input oninput=" if(this.value.length > this.maxLength) this.value = this.value.slice(0, maxLength);"
+        maxlength="16" minlength="16" type="text" class="input__number-card" id="input__number-card" placeholder="e.g. 1234 5678 9123 0000" />
+        <p class="section__number-error">Only numbers! Can't be blank</p>
+      </div>
+
+      <!-- INPUT CARD EXPIRATION MONTH & YEAR  -->
+
+
+      <div class="form__container-exp">
+
+        <div class="form__exp">
+
+          <label for="input__exp-card">exp. date (MM/YY)</label>
+          <div class="container__form-exp">
+            <!-- EXPIRATION MONTH-->
+            <input oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, maxLength);"
+            maxlength="2"
+            minlength="2"
+             type="text" class="input__exp-card" id="input__month-card" placeholder="MM" />
+
+            <!-- YEAR EXP -->
+            <input oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, maxLength);"
+            maxlength="2" minlength="2" type="text" class="input__year-card" id="input__year-card" placeholder="YY" />
+
+          </div>
+          <p class="section__exp-error">Can't be blank!
+          </p>
+        </div>
+
+        <!-- INPUT CVC CARD -->
+        <div class="form__input-cvc">
+          <label for="Card Holder Name">CVC</label>
+          <input onclick="if(this.value.length > this.maxLength) this.value = this.value.slice(0, maxLength)" maxlength="3" minlength="3" type="text" class="input__cvc-card" id="input__cvc-card" placeholder="e.g. 123" />
+          <p class="section__cvc-error">Can't be blank!</p>
+        </div>
+
+      </div>
+
+      </div>
+
+      <!-- BUTTON SUBMIT -->
+
+      <button class="button__confirm" id="confirm">Confirm</button>
+
+    </form>
+
+    <section class="done hidden" id="done">
+      <img src="./images/icon-complete.svg" alt="">
+      <h1>thank you!</h1>
+      <h2>We've added your card details</h2>
+    </section>
+  </section>
+
+</body>
+
+</html>
